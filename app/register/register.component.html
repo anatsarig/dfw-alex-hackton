@@ -1,0 +1,98 @@
+﻿<div class="container">
+
+    <h2>Edit Clip</h2>
+
+
+
+    <div class="row">
+        <div class="col-6">
+
+
+            <div #dataContainer></div>
+
+            <!--<iframe width="100%" height="300" [src]={{iframeVideo}}></iframe>-->
+            <!--<iframe width="100%" height="300" [src]={{iframeVideo}}></iframe>-->
+            <!--<iframe width="530"  src="https://www.youtube.com/embed/YzE0w6-aPM4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>-->
+            <!--<<iframe width="530" ng-src="{{iframeVideo}}" frameborder="0"  gesture="media" allow="encrypted-media" allowfullscreen></iframe>-->
+
+            <!--<video id="example_video_1" class="video-js vjs-default-skin" controls-->
+                   <!--poster="http://vjs.zencdn.net/v/oceans.png"-->
+                   <!--preload="auto" width="315" height="264" vjs-video>-->
+                <!--<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />-->
+                <!--<source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />-->
+                <!--<source src="http://vjs.zencdn.net/v/oceans.ogv" type='video/ogg' />-->
+            <!--</video>-->
+        </div>
+
+        <div class="col-6">
+            <form name="form" (ngSubmit)="register()" #f="ngForm">
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                    <label for="firstName">Mame</label>
+                    <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"  />
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                    <label for="lastName">Start At</label>
+                    <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel"  />
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                    <label for="userName">Length</label>
+                    <input type="text" class="form-control" name="username" [(ngModel)]="model.userName" #userName="ngModel"  />
+                </div>
+
+                <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !language.valid }">-->
+                <!--<ng-select [allowClear]="true"-->
+                <!--[languages]="languages"-->
+                <!--[disabled]="disabled"-->
+                <!--(data)="refreshValue($event)"-->
+                <!--(selected)="selected($event)"-->
+                <!--(removed)="removed($event)"-->
+                <!--(typed)="typed($event)"-->
+                <!--placeholder="No language selected">-->
+                <!--</ng-select>-->
+                <!--</div>-->
+
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !language.valid }">
+                    <label for="password">Language</label>
+                    <input type="text" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"  />
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">Get Embeded</button>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                    <button [disabled]="loading" class="btn btn-secondary">Get Url</button>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Start</th>
+            <th>Length</th>
+            <th>First Frame</th>
+            <th>Preview Frame</th>
+            <th>Last Frame</th>
+            <th>Url</th>
+            <th>Popularity</th>
+        </tr>
+
+
+        <tr class="col-2" *ngFor="let clip of clips; let i = index" (click)="setClickedRow(i)" [class.active]= "i == selectedRow">
+            <td>{{i + 1}}</td>
+            <td>{{clip.name}}</td>
+            <td>{{clip.start}}</td>
+            <td>{{clip.length}}</td>
+            <td><img height=75 src="{{clip.firstFrame}}"/></td>
+            <td><img height=75 src="{{clip.previewFrame}}"/></td>
+            <td><img height=75 src="{{clip.lastFrame}}"/></td>
+            <td>{{clip.iframe}}</td>
+            <td>{{clip.popularity}}</td>
+    </table>
+
+
+</div>
+
